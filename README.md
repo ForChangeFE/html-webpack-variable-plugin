@@ -2,9 +2,13 @@
 inject variables in process.env to window/global
 
 ## Installation
-`npm install html-webpack-variable-plugin --save-dev`
+```sh
+npm install html-webpack-variable-plugin --save-dev
+```
 or
-`yarn add html-webpack-variable-plugin --dev`
+```sh
+yarn add html-webpack-variable-plugin --dev
+```
 
 ## Usage
 ```js
