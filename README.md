@@ -1,2 +1,35 @@
 # html-webpack-variable-plugin
-由于开发环境下并不会在硬盘上写入html文件，而且直接修改html文件来注入全局变量也不够优雅。因此开发此插件，配合html-webpack-plugin来注入一些全局变量。
+inject variables in process.env to window/global
+
+## Installation
+`npm install html-webpack-variable-plugin --save-dev`
+or
+`yarn add html-webpack-variable-plugin --dev`
+
+## Usage
+```js
+// webpack.config.js
+// construct a json with all variables that you want to pass into window/global.
+process.env.VARS = JSON.stringify({
+  foo: process.env.FOO,
+  version: 'xxxx',
+})
+module.exports = {
+  // ...
+  plugins: [
+    new HtmlWebpackVariablePlugin(process.env.VARS ? {
+			map: process.env.VARS,
+		} : {})
+  ]
+}
+```
+
+```js
+// in your web app
+// ...
+console.log(window.foo) // exactly be equal to process.env.FOO
+console.log(window.version) // xxxx
+```
+
+## Notice
+fit with `html-webpack-plugin@2.29.0`
