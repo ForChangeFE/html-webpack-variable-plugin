@@ -2,7 +2,7 @@ function VariablePlugin(options) {
     var varsMap = {};
     try {
         // should pass json with options.map
-        var map = options.map || "";
+        var map = options.map || "{}";
         varsMap = JSON.parse(map);
     }
     catch (error) {
