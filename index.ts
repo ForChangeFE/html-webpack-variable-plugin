@@ -11,7 +11,7 @@ function VariablePlugin(options: Options) {
 
   try {
     // should pass json with options.map
-    const map = options.map || "";
+    const map = options.map || "{}";
     varsMap = JSON.parse(map);
   } catch (error) {
     throw new TypeError(
